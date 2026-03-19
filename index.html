@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Manejo DF</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Sebastián Massa Slimming | sebastian.massa@uc.cl" />
+    <meta name="date" content="2026-03-19" />
+    <script src="libs/header-attrs-2.30/header-attrs.js"></script>
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
+    <link href="libs/countdown-0.6.0/countdown.css" rel="stylesheet" />
+    <script src="libs/countdown-0.6.0/countdown.js"></script>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: left, middle, bg_karl1, h1
+
+&lt;img src= "images/logo_udp.png" width = "330" height = "100"&gt; 
+## Manejo de dataframes
+
+### Profesor: Sebastián Massa Slimming 
+### Ayudante: Eduardo Sandoval Sandoval
+### 19 de marzo 2026
+
+&lt;style type="text/css"&gt;
+.bg_karl1 {
+  position: relative;
+  z-index: 1;
+}
+
+.bg_karl1::before {    
+      content: "";
+      background-image: url('https://scitechdaily.com/images/Hacking-Cybersecurity.gif');
+      background-size: cover;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+      opacity: 1;
+      z-index: -1;
+}
+
+.h1 {
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+&lt;/style&gt;
+
+
+<countdown-timer class="countdown" id="timer_c4382240" minutes="5" seconds="0" update-every="1" tabindex="0" style="right:0;bottom:0;left:100;--countdown-margin:1%;--countdown-padding:1px;--countdown-font-size:2em;"></countdown-timer>
+
+---
+class: left, middle
+## Supuestos teóricos
+
+1) La [**confianza institucional**]() constituye la dimensión más robusta para analizar fenómenos relativos a la calidad y satisfacción democrática en el Chile contemporáneo. Esta confianza depende tanto de la performance gubernamental (es decir, la capacidad o eficacia gubernamental) junto con la [**valoración de figuras políticas**]() (Morales, 2008). 
+
+2) La satisfacción de la democracia dependerá de la [**valoración de los ciudadanos respecto a la capacidad**]() (es decir, eficacia) gubernamental de trasladar las preferencias en la toma de decisiones políticas
+(Delgado, 2015).
+
+3) La satisfacción con la democracia está influenciada a nivel macro con el [**ingreso de las personas**]() y a nivel micro con las [**percepciones que tiene cada individuo en su bienestar personal**](), de la situación de la economía en general, género y educación (Vargas &amp; González, 2013).
+
+4) La satisfacción de la democracia depende de la [**situación económica del país**](), el desempeño del gobierno y la [**confianza interpersonal**]() y política (Alister, Cea &amp; Guerrero, 2015)
+
+5) La satisfacción con la democracia no se encuentra directamente vinculado con la confianza social o el apego a la comunidad, aunque sí con un tercer factor en común, la [**satisfacción con la vida**]() (Montero, et al, 2008).
+
+---
+&lt;img src = "modelo.png"&gt;
+
+---
+class: middle, right, inverse, bg_karl81, h81
+# Preferencia por régimen político
+
+
+&lt;style type="text/css"&gt;
+.bg_karl81 {
+  position: relative;
+  z-index: 1;
+}
+
+.bg_karl81::before {    
+      content: "";
+      background-image: url("https://www.df.cl/noticias/site/artic/20220505/imag/foto_0000001020220505142138/A-_especial_1_-_Convencion_Constitucional_1.gif");
+      background-size: cover;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+      opacity: 1;
+      z-index: -1;
+}
+
+.h81 {
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+&lt;/style&gt;
+
+---
+
+class: middle, right, inverse, bg_karl64, h64
+# Clivajes ideológicos
+
+&lt;style type="text/css"&gt;
+.bg_karl64 {
+  position: relative;
+  z-index: 1;
+}
+
+.bg_karl64::before {    
+      content: "";
+      background-image: url("https://resizer.glanacion.com/resizer/v2/-P2VVFLAM3NHPNDNOIMWH4RTCRI.gif?auth=74dc9d0442380439ff4555b82541dd332035a5fb7c24c3c08e2acb0ac2170706&amp;width=1920&amp;height=1280&amp;quality=70&amp;smart=true");
+      background-size: cover;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+      opacity: 1;
+      z-index: -1;
+}
+
+.h64 {
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+&lt;/style&gt;
+
+---
+class: top, right, inverse, bg_karl3, h59
+# Confianza interpersonal
+
+&lt;style type="text/css"&gt;
+.bg_karl3 {
+  position: relative;
+  z-index: 1;
+}
+
+.bg_karl3::before {    
+      content: "";
+      background-image: url("https://www.latercera.com/resizer/0D3wm-fGR_VPy6AhCETDoX0JHgE=/800x0/smart/cloudfront-us-east-1.images.arcpublishing.com/copesa/N6PE2YJ4RJCMPN65QMI6CC34RE.gif");
+      background-size: cover;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+      opacity: 9;
+      z-index: -1;
+}
+
+.h59 {
+  color: black;
+  text-shadow: 1px 1px 3px white;
+}
+
+&lt;/style&gt;
+
+---
+
+class: middle, right, inverse, bg_karl59, h59
+# Percepción de la economía
+
+&lt;style type="text/css"&gt;
+.bg_karl59 {
+  position: relative;
+  z-index: 1;
+}
+
+.bg_karl59::before {    
+      content: "";
+      background-image: url("https://www.df.cl/noticias/site/artic/20210712/imag/foto_0000000720210712192213.gif");
+      background-size: cover;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+      opacity: 1;
+      z-index: -1;
+}
+
+.h59 {
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+&lt;/style&gt;
+
+---
+
+class: middle, center, bg_karl57, h57
+
+# Evaluación de figuras políticas
+
+&lt;style type="text/css"&gt;
+.bg_karl57 {
+  position: relative;
+  z-index: 1;
+}
+
+.bg_karl57::before {    
+      content: "";
+      background-image: url("https://www.radioprensa.cl/wp-content/uploads/2026/01/MINISTROS-KAST.jpg");
+      background-size: cover;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+      opacity: 1;
+      z-index: -1;
+}
+
+.h57 {
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+&lt;/style&gt;
+
+
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create();
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
